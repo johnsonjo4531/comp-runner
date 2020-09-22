@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: slategray;
+	font-size: 20px;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+.body {
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(3, 33.33vw);
+  grid-template-rows:  repeat(3, 33.33vh);
+	grid-template-areas: "top top top"
+											 "top top top"
+											 "left right right";
+	/* max-height: 100vh; */
+	overflow-y: hidden;
+}
+
+.code-editor {
+	grid-area: top;
+}
+
+.input-editor {
+	grid-area: left;
+}
+
+.output-editor {
+	grid-area: right;
+}
+
+.editor {
+	position: relative;
+}
+
+.status-bar > * + * {
+	margin-left: 0.75em;
+}
+
+.status-bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	background-color: steelblue;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: row;
+	padding: 0.25em;
+	color: white;
+}
