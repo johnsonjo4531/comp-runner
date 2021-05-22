@@ -1,0 +1,64 @@
+.grid-resize-align-left {
+	position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.grid-resize-align-right {
+	position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.grid-resize-align-top {
+	position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.grid-resize-align-bottom {
+	position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.resize-grid > * {
+  position: relative;
+}
+
+[data-resize="ns"] {
+  cursor: ns-resize;
+  position: absolute;
+  background-color: #000;
+	color: white;
+  padding: 0.5em;
+  content: "";
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+[data-resize="ew"] {
+  cursor: ew-resize;
+  position: absolute;
+  background-color: #000;
+	color: white;
+  padding: 0.5em;
+  content: "";
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+

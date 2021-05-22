@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const APP_DIR = path.resolve(__dirname, './src');
+const MONACO_DIR = path.resolve(__dirname, './node_modules/monaco-editor');
 
 module.exports = {
 	target: "electron-renderer",
@@ -14,7 +16,7 @@ module.exports = {
 	},
 	resolve: {
 		enforceExtension: false,
-		extensions: ['.js', '.ts', '.tsx']
+		extensions: ['.js', '.ts', '.tsx', ".css"]
 	},
 	optimization: {
 		minimize: false
@@ -34,17 +36,27 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				include: path.resolve(__dirname, "./src"),
-				use: ['style-loader', 'css-loader'],
-			}, {
+				include: APP_DIR,
+				use: [{
+					loader: 'style-loader',
+				},
+					{
+					loader: 'css-loader',
+					// options: {
+					// 	modules: true,
+					// 	namedExport: true,
+					// },
+				}],
+			},
+			{
 				test: /\.css$/,
-				include: path.resolve(__dirname, "./node_modules/monaco-editor"),
+				include: MONACO_DIR,
 				use: ['style-loader', 'css-loader'],
 			},
 			{
-      test: /\.ttf$/,
-      use: ['file-loader']
-    }
+				test: /\.ttf$/,
+				use: ['file-loader']
+			}
 		]
 	},
 	plugins: [
@@ -54,9 +66,6 @@ module.exports = {
 		new webpack.SourceMapDevToolPlugin({
 			lineToLine: true
 		}),
-		new MonacoWebpackPlugin({
-			// available options are documented at https://github.com/Microsoft/monaco-editor-webpack-plugin#options
-      languages: ['json', "javascript", "typescript", 'python']
-    })
+		new MonacoWebpackPlugin()
 	],
 };

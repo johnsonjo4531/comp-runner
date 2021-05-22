@@ -1,15 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "es2018",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
+	"compilerOptions": {
+		"target": "es2018", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
 		"module": "commonjs",
 		"moduleResolution": "node",
-    "strict": true,                           /* Enable all strict type-checking options. */
-    "esModuleInterop": true,
-    "skipLibCheck": true,                     /* Skip type checking of declaration files. */
-    "forceConsistentCasingInFileNames": true,
+		"strict": true, /* Enable all strict type-checking options. */
+		"esModuleInterop": true,
+		"skipLibCheck": true, /* Skip type checking of declaration files. */
+		"forceConsistentCasingInFileNames": true,
 		"rootDir": "src",
+		"jsx": "react",
 		"outDir": "dist",
-		"jsx": "react"
+		"lib": ["DOM"]
 	},
-	"include": ["src/backend/main.ts"]
+	"include": ["src/backend/main.ts", "./src/frontend/**/*.ts", "./src/frontend/**/*.tsx", "./src/frontend/**/*.d.ts"]
 }

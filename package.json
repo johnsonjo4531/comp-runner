@@ -10,7 +10,9 @@
     "dev": "webpack -w",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "yarn tsc && yarn webpack && electron-forge make"
+    "build": "yarn tsc --build tsconfig.json",
+    "make": "yarn tsc --build tsconfig.json && yarn webpack && electron-forge make",
+    "mac:open": "open ./out/comp-runner-darwin-x64/comp-runner.app"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.53",
@@ -32,6 +34,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@babel/core": "^7.11.6",
+    "@types/babel__core": "^7.1.10",
     "@types/lodash": "^4.14.161",
     "@types/lodash.debounce": "^4.0.6",
     "@types/react": "^16.9.49",
@@ -39,9 +43,15 @@
     "electron-squirrel-startup": "^1.0.0",
     "lodash.debounce": "^4.0.8",
     "lookpath": "^1.1.0",
+    "monaco-editor": "^0.21.1",
     "react": "^16.13.1",
+    "react-ansi": "^2.1.2",
     "react-dom": "^16.13.1",
-    "react-monaco-editor": "^0.40.0"
+    "resize-observer-polyfill": "^1.5.1",
+    "shell-path": "^2.1.0",
+    "spawn-sync": "^2.0.0",
+    "strip-ansi": "^7.0.0",
+    "temp-dir": "^2.0.0"
   },
   "config": {
     "forge": {

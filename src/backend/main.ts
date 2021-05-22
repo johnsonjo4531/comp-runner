@@ -10,10 +10,10 @@ function createWindow () {
 			nodeIntegration: true,
 			worldSafeExecuteJavaScript: true,
     }
-  })
-
+	});
+	
   // and load the index.html of the app.
-  win.loadFile(path.join(__dirname,  `../frontend/index.html`))
+  win.loadFile(path.resolve(__dirname, `../frontend/index.html`))
 }
 
 // This method will be called when Electron has finished
